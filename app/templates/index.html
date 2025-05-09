@@ -8,13 +8,16 @@
 <body>
   <h1>🧠 ShelfFinder</h1>
   <form method="POST">
-    <input type="text" name="product_url" placeholder="Paste Amazon URL" required>
+    <input type="text" name="product_url" placeholder="Paste Amazon product URL" required>
     <button type="submit">Find Alternatives</button>
   </form>
 
   {% if result %}
-    <h3>Result:</h3>
-    <p>{{ result }}</p>
+    <h3>Product Info:</h3>
+    <p><strong>Title:</strong> {{ result.title }}</p>
+    <p><strong>Price:</strong> {{ result.price }}</p>
+    <p><strong>Brand:</strong> {{ result.brand }}</p>
+    <p><strong>Availability:</strong> {{ result.availability }}</p>
   {% endif %}
 </body>
 </html>
